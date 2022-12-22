@@ -1,10 +1,10 @@
 from django.urls import path
 
-from rss.views import rsslist
+from rss.views import rsslistView
 
 
 urlpatterns= [
 
-path("reader/", rsslist.as_view(), name='index')
+path("reader/", rsslistView.as_view(), name='index')
 
 ]
