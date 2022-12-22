@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'rss',
     'rest_framework',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings celery 
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_ACCEPT_CONTENT = ['applications/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE =TIME_ZONE
+CELERY_TASK_DEFAULT_QUEUE ='default'
