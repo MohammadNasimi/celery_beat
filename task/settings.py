@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'accounts',
     'rss',
     'rest_framework',
-    'django_celery_beat'
+    'django_celery_beat',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
