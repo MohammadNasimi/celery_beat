@@ -32,7 +32,7 @@ class rsslistView(ListAPIView):
     def get_queryset(self):
         queryset =news.objects.all()
         queryset = queryset.order_by('updated')  # use -data ASC and data DESC
-                       
+        
         return queryset
 
   
