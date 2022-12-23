@@ -36,9 +36,8 @@ class LoginView(generics.GenericAPIView):
             return Response({'user':'wrong username or password'}, status=status.HTTP_200_OK)
         
         
-##############################################
-############register driver ##################
-class RegisterDriverView(generics.APIView):
+############register  ##################
+class RegisterView(generics.APIView):
     def post(self, request, *args, **kwargs):
         email= request.data.get("email" ,"")
         first_name= request.data.get("first_name" ,"")
