@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics,status
+from rest_framework.views import APIView
 from rest_framework.response import Response
 #accounts
 from accounts.models import User
@@ -37,7 +38,7 @@ class LoginView(generics.GenericAPIView):
         
         
 ############register  ##################
-class RegisterView(generics.APIView):
+class RegisterView(APIView):
     def post(self, request, *args, **kwargs):
         email= request.data.get("email" ,"")
         first_name= request.data.get("first_name" ,"")
