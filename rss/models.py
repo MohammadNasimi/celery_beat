@@ -7,3 +7,6 @@ class news (models.Model):
     updated = models.DateTimeField()
     summary = models.TextField(max_length=200)
     link = models.URLField(max_length=128,db_index=True,unique=True,blank=True)
+    
+    def __str__(self) -> str:
+        return self.title
