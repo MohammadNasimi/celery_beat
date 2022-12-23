@@ -5,7 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from rest_framework import status
-
+# other app import
+from datetime import date
 # rss app 
 from rss.models import news
 # import celery 
@@ -30,6 +31,8 @@ class rsslistView(ListAPIView):
      
     def get_queryset(self):
         queryset =news.objects.all()
+        queryset = queryset.order_by('updated')  # use -data ASC and data DESC
+                       
         return queryset
 
   
